@@ -1,0 +1,78 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>Trial Registration</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="loginpage">
+
+	<div class="logo">
+		<img src="assets/img/impulse-logo.png" alt="Impulse Logo">
+	</div>
+
+	<form #signupForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Name</ion-label>
+				<ion-input [(ngModel)]="signup.name" name="name" type="text" #name="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="name.valid || submitted == false" color="danger" padding-left>
+				Name is required
+			</p>
+
+			<ion-item class="transparent">
+				<ion-label stacked color="light">IC Number</ion-label>
+				<ion-input [(ngModel)]="signup.ic" name="ic" type="text" #ic="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="ic.valid || submitted == false" color="danger" padding-left>
+				IC number is required
+			</p>
+
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Email</ion-label>
+				<ion-input [(ngModel)]="signup.email" name="email" type="email" #email="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+				Email is required
+			</p>
+
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Phone Number</ion-label>
+				<ion-input [(ngModel)]="signup.phone" name="phone" type="tel" #phone="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="phone.valid || submitted == false" color="danger" padding-left>
+				Phone number is required
+			</p>
+
+			<!-- <ion-item class="transparent">
+				<ion-label stacked color="light">Password</ion-label>
+				<ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+				Password is required
+			</p>
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Confirm Password</ion-label>
+				<ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+				Password is required
+			</p> -->
+		</ion-list>
+
+		<div padding>
+			<button ion-button (click)="onSignup(signupForm)" type="submit" block>Register</button>
+		</div>
+		
+	</form>
+
+</ion-content>

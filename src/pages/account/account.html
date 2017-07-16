@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="account2page()">Next</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <div padding-top text-center *ngIf="username">
+    <img src="assets/img/zul.png" alt="avatar">
+    <h2 tappable (click)="changeUsername()">{{username}}</h2>
+
+    <ion-list inset>
+      <!-- <button ion-item (click)="updatePicture()">Update Picture</button> -->
+      <button ion-item (click)="changeName()">Name <div item-content style="color: gray;">
+      {{profile.name}}
+    </div></button>
+    <!-- <button ion-item>Gender <div item-content style="color: gray;">
+      <ion-select [(ngModel)]="gender" placeholder="Please select">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </div></button> -->
+    <ion-item>
+      <ion-label style="color: black;">Gender</ion-label>
+      <ion-select [(ngModel)]="profile.gender" placeholder="Please select">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <button ion-item (click)="changeDOB()">DOB <div item-content style="color: gray;">
+      {{dob | date: 'dd/MM/yyyy' || 'NA'}}
+    </div></button>
+    <button ion-item (click)="changePhone()">Phone <div item-content style="color: gray;">
+      {{profile.phone}}
+    </div></button>
+    <button ion-item (click)="changeIC()">IC Number/Passport <div item-content style="color: gray;">
+      {{profile.ic_number}}
+    </div></button>
+    <button ion-item (click)="changePassword()">Password <div item-content style="color: gray;">
+      Click to update
+    </div></button>
+    <button ion-item text-wrap (click)="changeAddress()">
+      <!-- <ion-label stacked color="dark">Address</ion-label> -->
+      <!-- <ion-textarea placeholder="Address" [(ngModel)]="profile.address"></ion-textarea> -->
+      <!-- <p>{{profile.address}}</p> -->
+      <h5>Address</h5>
+      <p>{{profile.address}}</p>
+    </button>
+      <!-- <button ion-item (click)="nil()">Number of Credits <div item-content style="color: gray;">200</div></button>
+      <button ion-item (click)="nil()">Credit Validity <div item-content style="color: gray;">
+      20 May 2017
+    </div></button> -->
+      <!-- <button ion-item (click)="support()">Support</button> -->
+      <!-- <button ion-item (click)="logout()">Logout</button> -->
+      <button ion-button block color="danger">Save</button>
+    </ion-list>
+
+  
+  </div>
+</ion-content>

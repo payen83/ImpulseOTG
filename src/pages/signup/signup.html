@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>Sign Up</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="loginpage">
+
+	<div class="logo">
+		<img src="assets/img/impulse-logo.png" alt="Impulse Logo">
+	</div>
+
+	<form #signupForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Email</ion-label>
+				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+				Email is required
+			</p>
+
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Password</ion-label>
+				<ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+				Password is required
+			</p>
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Confirm Password</ion-label>
+				<ion-input [(ngModel)]="signup.confirmPassword" name="confirmPassword" type="password" #confirmPassword="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="confirmPassword.valid || submitted == false" color="danger" padding-left>
+				Confirm password is required
+			</p>
+		</ion-list>
+
+		<div padding>
+			<button ion-button (click)="onSignup(signupForm)" type="submit" block>Create</button>
+		</div>
+		<div class="buttons">
+			<button ion-button block icon-left color="facebook" (click)="facebookSignup()" round><ion-icon name="logo-facebook"></ion-icon>Signup with Facebook</button>
+			<button ion-button block icon-left color="google" (click)="googleSignup()" round><ion-icon name="logo-google"></ion-icon>Signup with Google</button>
+			<button ion-button block icon-left color="linkedin" (click)="linkedInSignup()" round><ion-icon name="logo-linkedin"></ion-icon>Signup with LinkedIn</button>
+			
+		</div>
+	</form>
+
+</ion-content>

@@ -1,0 +1,7 @@
+*.jks
+*.apk
+/node_modules/
+/platforms/
+/node_modules/*
+/platforms/*
+*.txt

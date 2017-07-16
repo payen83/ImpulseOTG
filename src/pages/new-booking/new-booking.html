@@ -1,0 +1,70 @@
+<!--
+  Generated template for the NewBookingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<ion-list>
+		<ion-item class="label">
+			<ion-icon name="flag" item-start></ion-icon>
+			<ion-label>Country</ion-label>
+			<ion-select [(ngModel)]="country" placeholder="Select" (ionChange)="countrySelected(country)">
+		        <ion-option value="Malaysia">Malaysia</ion-option>
+		        <ion-option value="China">China</ion-option>
+	      	</ion-select>
+	    </ion-item>
+	    <ion-item>
+	    	<ion-icon name="pin" item-start></ion-icon>
+	      <ion-label>Studio</ion-label>
+	      <ion-select [(ngModel)]="studio" placeholder="Select" disabled="{{studioDisable}}">
+	        <ion-option *ngFor="let studio of studioList" value="{{studio.name}}">{{studio.name}}</ion-option>
+	        <!-- <ion-option value="klsentral">KL Sentral</ion-option>
+	       	<ion-option value="damansara">Damansara</ion-option> -->
+	      </ion-select>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Session Type</ion-label>
+	    	<ion-icon name="apps" item-start></ion-icon>
+			<ion-select [(ngModel)]="type" placeholder="Select">
+				<ion-option value="standard">Standard</ion-option>
+				<ion-option value="premium">Premium</ion-option>
+			</ion-select>
+	    </ion-item>
+	    <ion-item>
+	    	<ion-icon name="body" item-start></ion-icon>
+	      	<ion-label>Trainer</ion-label>
+			<ion-select [(ngModel)]="trainer" placeholder="Select">
+				<ion-option value="elly">Elly</ion-option>
+				<ion-option value="nadia">Nadia</ion-option>
+			</ion-select>
+	    </ion-item>
+	    <button ion-item (click)="changeDate()">
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label>Date</ion-label>
+			<ion-input [(ngModel)]="bookingDate" type="text" disabled="true"></ion-input>
+	    </button>
+	    <ion-item>
+	    	<ion-icon name="clock" item-start></ion-icon>
+			<ion-label>Time</ion-label>
+			<ion-select [(ngModel)]="trainer" placeholder="Select">
+				<ion-option value="10">11:00am</ion-option>
+				<ion-option value="11">12:00pm</ion-option>
+	      	</ion-select>
+ 	    </ion-item>
+	</ion-list>
+	<div padding>
+		<button ion-button block color="danger">Book</button>
+	</div>
+
+</ion-content>

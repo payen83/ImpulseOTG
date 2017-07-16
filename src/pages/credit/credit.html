@@ -1,0 +1,48 @@
+<!--
+  Generated template for the Credit page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Membership</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+	<ion-list>
+		<ion-item-divider color="silver">
+		  MEMBERSHIP INFO
+		</ion-item-divider>
+		<ion-item><ion-label>Status</ion-label><ion-note item-end color="danger">Active</ion-note></ion-item>
+		<ion-item><ion-label>Credit Balance</ion-label><ion-note item-end color="danger">RM 500</ion-note></ion-item>
+	</ion-list>
+
+	<ion-list radio-group [(ngModel)]="credit">
+		<ion-item-divider color="silver">
+		  PURCHASE CREDIT
+		</ion-item-divider>
+		<ion-item>
+		    <ion-label>A Credit @ RM50</ion-label>
+		    <ion-radio checked="false" value="50" color="danger"></ion-radio>
+		</ion-item>
+		<ion-item>
+		    <ion-label>B Credit @ RM100</ion-label>
+		    <ion-radio checked="false" value="100" color="danger"></ion-radio>
+		</ion-item>
+		<ion-item>
+		    <ion-label>C Credit @ RM200</ion-label>
+		    <ion-radio checked="false" value="200" color="danger"></ion-radio>
+		</ion-item>
+	</ion-list>
+	<div padding>
+		<button ion-button block color="danger">Purchase</button>
+	</div>
+
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar>
+	<!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+		<ion-title>Login</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="loginpage">
+	<div class="logo">
+		<img src="assets/img/impulse-logo.png" alt="Impulse logo">
+	</div>
+
+	<form #loginForm="ngForm" novalidate>
+		<ion-list no-lines>
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Email2</ion-label>
+				<ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+					required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="username.valid || submitted == false" color="secondary" padding-left>
+				Email is required
+			</p>
+
+			<ion-item class="transparent">
+				<ion-label stacked color="light">Password</ion-label>
+				<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="password.valid || submitted == false" color="secondary" padding-left>
+				Password is required
+			</p>
+		</ion-list>
+
+		<ion-row responsive-sm padding>
+			<ion-col>
+				<button ion-button (click)="onLogin(loginForm)" type="submit" block>Login</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button (click)="onSignup()" color="light" block>Signup</button>
+			</ion-col>
+		</ion-row>
+		
+		<div class="button-padding">
+			<button ion-button block icon-left color="facebook" (click)="facebookLogin()" round><ion-icon name="logo-facebook"></ion-icon>Sign in with Facebook</button>
+			<button ion-button block icon-left color="google" (click)="googleLogin()" round><ion-icon name="logo-google"></ion-icon>Sign in with Google</button>
+			<button ion-button block icon-left color="linkedin" (click)="linkedInLogin()" round><ion-icon name="logo-linkedin"></ion-icon>Sign in with LinkedIn</button>
+		</div>
+	</form>
+
+</ion-content>

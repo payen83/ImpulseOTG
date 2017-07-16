@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-googleplus": {
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.50271623750-u46cffg7sdgvi4bplh7rd5og7ilqgnhb",
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        },
+        "com.moust.cordova.videoplayer": {
+            "PACKAGE_NAME": "com.impulsestudio.app"
+        }
+    },
+    "dependent_plugins": {}
+}
